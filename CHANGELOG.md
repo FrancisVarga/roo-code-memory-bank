@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://github.com/FrancisVarga/roo-code-memory-bank/compare/v1.0.0...v1.1.0) (2025-04-05)
+
+
+### Features
+
+* Add Python installation script to README and update installation instructions ([a231ef6](https://github.com/FrancisVarga/roo-code-memory-bank/commit/a231ef631aff590f4549de949f1894a3cda507d8))
+
+
+### Bug Fixes
+
+* Update README links to point to the correct repository ([5b7af07](https://github.com/FrancisVarga/roo-code-memory-bank/commit/5b7af0718139263ed06d4c25a1a35f7b0a26470a))
+
+
+### Miscellaneous
+
+* Update installation scripts for improved functionality and organization ([f58c8da](https://github.com/FrancisVarga/roo-code-memory-bank/commit/f58c8da45eb78b330576ff7179dd9624896634af))
+
 ## 1.0.0 (2025-04-05)
 
 
