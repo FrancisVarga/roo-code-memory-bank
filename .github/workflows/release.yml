@@ -39,17 +39,25 @@ jobs:
 
       - name: Create Release Package
         run: |
-          mkdir -p release/config/specs
-          cp config/.clinerules-* release/config/
-          cp config/.roomodes release/config/
-          # Copy specs folder contents
-          cp -r config/specs/ release/config/
-          # Excluding install scripts as requested
-          cp README.md release/
-          cp LICENSE release/
-          cd release
-          zip -r roo-code-memory-bank.zip .
-          tar -czf roo-code-memory-bank.tar.gz .
+          # Create staging directory
+          mkdir -p staging
+
+          # Copy all required files to staging directory
+          mkdir -p staging/config/specs
+          cp -r config/.clinerules-* staging/config/ || true
+          cp -r config/.roomodes staging/config/ || true
+          cp -r config/specs/ staging/config/ || true
+          cp README.md staging/ || true
+          cp LICENSE staging/ || true
+
+          # Create releases directory
+          mkdir -p release
+
+          # Create archives from staging directory
+          cd staging
+          zip -r ../release/roo-code-memory-bank.zip .
+          tar -czf ../release/roo-code-memory-bank.tar.gz .
+          cd ..
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
