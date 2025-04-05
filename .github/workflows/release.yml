@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main # Adjust this to your default branch if different
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node # Choose the appropriate type for your project
+          package-name: roo-code-memory-bank
+          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"docs","section":"Documentation","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
+
+  build-package:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed for updating releases
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }} # Checkout the tag that was just released
+
+      - name: Create Release Package
+        run: |
+          mkdir -p release/config/specs
+          cp config/.clinerules-* release/config/
+          cp config/.roomodes release/config/
+          # Copy specs folder contents
+          cp -r config/specs/ release/config/
+          # Excluding install scripts as requested
+          cp README.md release/
+          cp LICENSE release/
+          cd release
+          zip -r roo-code-memory-bank.zip .
+          tar -czf roo-code-memory-bank.tar.gz .
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.release-please.outputs.tag_name }}
+          files: |
+            release/roo-code-memory-bank.zip
+            release/roo-code-memory-bank.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

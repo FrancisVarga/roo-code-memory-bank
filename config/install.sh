@@ -5,16 +5,19 @@ set -e
 
 echo "--- Starting Roo Code Memory Bank Config Setup ---"
 
-# Define files to download (relative to config/ in the repo)
-REPO_BASE_URL="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config"
-FILES_TO_DOWNLOAD=(
-    ".clinerules-architect"
-    ".clinerules-ask"
-    ".clinerules-code"
-    ".clinerules-debug"
-    ".clinerules-test"
-    ".roomodes"
-)
+# Define GitHub repository information
+GITHUB_REPO="FrancisVarga/roo-code-memory-bank"
+TEMP_DIR=$(mktemp -d)
+TAR_FILE="${TEMP_DIR}/roo-code-memory-bank.tar.gz"
+
+# Cleanup function to be called on exit
+cleanup() {
+    echo "Cleaning up temporary files..."
+    rm -rf "${TEMP_DIR}"
+}
+
+# Set the cleanup function to run on script exit
+trap cleanup EXIT
 
 # Check for curl command
 if ! command -v curl &> /dev/null; then
@@ -25,19 +28,34 @@ else
     echo "Found curl executable."
 fi
 
-echo "Downloading configuration files..."
+echo "Downloading latest release..."
 
-# Loop through files and download each one
-for FILE in "${FILES_TO_DOWNLOAD[@]}"; do
-    echo "  Downloading ${FILE}..."
-    # Use -f to fail silently on server errors but return error code
-    # Use -L to follow redirects
-    # set -e will cause script to exit if curl fails
-    curl -L -f -o "${FILE}" "${REPO_BASE_URL}/${FILE}"
-    echo "  Successfully downloaded ${FILE}."
-done
+# Get the latest release URL
+echo "Fetching the latest release information..."
+DOWNLOAD_URL=$(curl -s -L -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${GITHUB_REPO}/releases/latest" | 
+    grep "browser_download_url.*tar.gz" | 
+    cut -d '"' -f 4)
 
-echo "All configuration files downloaded successfully."
+if [ -z "${DOWNLOAD_URL}" ]; then
+    echo "Error: Could not determine download URL for the latest release."
+    echo "Please check your internet connection or repository settings."
+    exit 1
+fi
+
+echo "Downloading from: ${DOWNLOAD_URL}"
+curl -L -o "${TAR_FILE}" "${DOWNLOAD_URL}"
+
+echo "Extracting configuration files..."
+
+# Create extraction directory
+mkdir -p "${TEMP_DIR}/extracted"
+tar -xzf "${TAR_FILE}" -C "${TEMP_DIR}/extracted"
+
+# Copy configuration files to current directory
+echo "Copying configuration files to current directory..."
+cp -f "${TEMP_DIR}/extracted/config/"* .
+
+echo "All configuration files installed successfully."
 echo "--- Roo Code Memory Bank Config Setup Complete ---"
 
 echo "Scheduling self-deletion of $0..."
