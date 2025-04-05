@@ -1,0 +1,13 @@
+main:
+  - title: "Posts"
+    url: /year-archive/
+  - title: "Developer Primer"
+    url: /developer-primer/
+  - title: "Project Brief"
+    url: /project-brief/
+  - title: "Changelog"
+    url: /changelog/
+  - title: "Progress Updates"
+    url: /updates/
+  - title: "License"
+    url: /license/

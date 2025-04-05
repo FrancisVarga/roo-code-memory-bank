@@ -1,0 +1,1321 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Developer Primer - Roo Code Memory Bank</title>
+<meta name="description" content="Documentation and updates for the Roo Code Memory Bank project">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Roo Code Memory Bank">
+<meta property="og:title" content="Developer Primer">
+<meta property="og:url" content="http://localhost:4000/developer-primer/">
+
+
+  <meta property="og:description" content="Documentation and updates for the Roo Code Memory Bank project">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/developer-primer/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Roo Code Memory Bank Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Roo Code Memory Bank
+          <span class="site-subtitle">Project Documentation</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/year-archive/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/developer-primer/"
+                
+                
+              >Developer Primer</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/project-brief/"
+                
+                
+              >Project Brief</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/changelog/"
+                
+                
+              >Changelog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/updates/"
+                
+                
+              >Progress Updates</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/license/"
+                
+                
+              >License</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Developer Primer</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Developer Primer">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/developer-primer/" itemprop="url">Developer Primer
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#roo-code-memory-bank-developer-primer">Roo Code Memory Bank: Developer Primer</a><ul><li><a href="#️-system-architecture">🏗️ System Architecture</a><ul><li><a href="#core-components">Core Components</a></li></ul></li><li><a href="#-memory-bank-structure">📚 Memory Bank Structure</a><ul><li><a href="#core-files">Core Files</a></li></ul></li><li><a href="#-mode-system">🔄 Mode System</a><ul><li><a href="#mode-types">Mode Types</a></li><li><a href="#intelligent-mode-switching">Intelligent Mode Switching</a></li></ul></li><li><a href="#️-configuration-system">⚙️ Configuration System</a><ul><li><a href="#clinerules-files">.clinerules Files</a></li><li><a href="#file-organization">File Organization</a></li></ul></li><li><a href="#️-development-workflow">🛠️ Development Workflow</a><ul><li><a href="#real-time-update-system">Real-time Update System</a></li><li><a href="#memory-bank-initialization">Memory Bank Initialization</a></li><li><a href="#session-workflow">Session Workflow</a></li></ul></li><li><a href="#-best-practices">🔍 Best Practices</a></li><li><a href="#-troubleshooting">🐛 Troubleshooting</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="roo-code-memory-bank-developer-primer">Roo Code Memory Bank: Developer Primer</h1>
+
+<h2 id="️-system-architecture">🏗️ System Architecture</h2>
+
+<h3 id="core-components">Core Components</h3>
+
+<pre><code class="language-mermaid">flowchart TD
+    A[Memory Bank System] --&gt; B[Core Files]
+    A --&gt; C[Mode System]
+    A --&gt; D[Configuration]
+    A --&gt; E[Real-time Updates]
+    
+    B --&gt; B1[activeContext.md]
+    B --&gt; B2[productContext.md]
+    B --&gt; B3[progress.md]
+    B --&gt; B4[decisionLog.md]
+    
+    C --&gt; C1[Architect Mode]
+    C --&gt; C2[Code Mode]
+    C --&gt; C3[Ask Mode]
+    C --&gt; C4[Debug Mode]
+    
+    D --&gt; D1[.clinerules Files]
+    D --&gt; D2[Mode Switching]
+    D --&gt; D3[Tool Access]
+    
+    E --&gt; E1[Event Monitor]
+    E --&gt; E2[Update Queue]
+    E --&gt; E3[Sync Manager]
+</code></pre>
+
+<h2 id="-memory-bank-structure">📚 Memory Bank Structure</h2>
+
+<p>The Memory Bank system consists of a <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory containing core and optional files:</p>
+
+<h3 id="core-files">Core Files</h3>
+
+<ol>
+  <li><strong>activeContext.md</strong>
+    <ul>
+      <li>Purpose: Tracks current session state and goals</li>
+      <li>Content:
+        <ul>
+          <li>Current tasks and objectives</li>
+          <li>Recent changes and decisions</li>
+          <li>Open questions and blockers</li>
+          <li>Session-specific context</li>
+        </ul>
+      </li>
+      <li>Update Frequency: Every session</li>
+    </ul>
+  </li>
+  <li><strong>productContext.md</strong>
+    <ul>
+      <li>Purpose: Defines project scope and core knowledge</li>
+      <li>Content:
+        <ul>
+          <li>Project overview and goals</li>
+          <li>Component architecture</li>
+          <li>Technical standards</li>
+          <li>Key dependencies</li>
+        </ul>
+      </li>
+      <li>Update Frequency: When project scope changes</li>
+    </ul>
+  </li>
+  <li><strong>progress.md</strong>
+    <ul>
+      <li>Purpose: Tracks work status and milestones</li>
+      <li>Content:
+        <ul>
+          <li>Completed work items</li>
+          <li>Current tasks</li>
+          <li>Next steps</li>
+          <li>Known issues</li>
+        </ul>
+      </li>
+      <li>Update Frequency: As tasks progress</li>
+    </ul>
+  </li>
+  <li><strong>decisionLog.md</strong>
+    <ul>
+      <li>Purpose: Records important decisions</li>
+      <li>Content:
+        <ul>
+          <li>Technical decisions</li>
+          <li>Architecture choices</li>
+          <li>Implementation details</li>
+          <li>Alternative considerations</li>
+        </ul>
+      </li>
+      <li>Update Frequency: When decisions are made</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-mode-system">🔄 Mode System</h2>
+
+<h3 id="mode-types">Mode Types</h3>
+
+<ol>
+  <li><strong>Architect Mode</strong>
+    <ul>
+      <li>Purpose: System design and architecture</li>
+      <li>Capabilities:
+        <ul>
+          <li>Memory Bank initialization</li>
+          <li>Architecture decisions</li>
+          <li>System planning</li>
+        </ul>
+      </li>
+      <li>File Access: Markdown files only</li>
+    </ul>
+  </li>
+  <li><strong>Code Mode</strong>
+    <ul>
+      <li>Purpose: Implementation and coding</li>
+      <li>Capabilities:
+        <ul>
+          <li>Full file access</li>
+          <li>Code generation</li>
+          <li>File modifications</li>
+        </ul>
+      </li>
+      <li>No file restrictions</li>
+    </ul>
+  </li>
+  <li><strong>Ask Mode</strong>
+    <ul>
+      <li>Purpose: Information and guidance</li>
+      <li>Capabilities:
+        <ul>
+          <li>Context understanding</li>
+          <li>Documentation help</li>
+          <li>Best practices guidance</li>
+        </ul>
+      </li>
+      <li>File Access: Read-only</li>
+    </ul>
+  </li>
+  <li><strong>Debug Mode</strong>
+    <ul>
+      <li>Purpose: Troubleshooting and problem-solving</li>
+      <li>Capabilities:
+        <ul>
+          <li>System behavior analysis</li>
+          <li>Incremental testing</li>
+          <li>Root cause identification</li>
+          <li>Diagnostic tooling</li>
+        </ul>
+      </li>
+      <li>File Access: Read-only</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="intelligent-mode-switching">Intelligent Mode Switching</h3>
+
+<pre><code class="language-mermaid">stateDiagram-v2
+    Architect --&gt; Code : Implementation/File Edit
+    Architect --&gt; Ask : Information Request
+    Architect --&gt; Debug : Problem Investigation
+    Ask --&gt; Code : Implementation Request
+    Ask --&gt; Architect : Design Discussion
+    Ask --&gt; Debug : Troubleshooting Request
+    Code --&gt; Architect : Architecture Review
+    Code --&gt; Ask : Documentation Help
+    Code --&gt; Debug : Bug Investigation
+    Debug --&gt; Code : Fix Implementation
+    Debug --&gt; Ask : Documentation Reference
+    Debug --&gt; Architect : System Design Review
+</code></pre>
+
+<p>The system supports intelligent mode switching based on both prompt analysis and operational needs:</p>
+
+<ol>
+  <li><strong>Intent-Based Triggers</strong>:
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mode_switching</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">preserve_context</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">intent_triggers</span><span class="pi">:</span>
+      <span class="na">code</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">implement</span>
+        <span class="pi">-</span> <span class="s">create</span>
+        <span class="pi">-</span> <span class="s">build</span>
+        <span class="pi">-</span> <span class="s">code</span>
+        <span class="pi">-</span> <span class="s">develop</span>
+        <span class="pi">-</span> <span class="s">fix</span>
+      <span class="na">debug</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">debug</span>
+        <span class="pi">-</span> <span class="s">troubleshoot</span>
+        <span class="pi">-</span> <span class="s">diagnose</span>
+        <span class="pi">-</span> <span class="s">investigate</span>
+        <span class="pi">-</span> <span class="s">analyze</span>
+        <span class="pi">-</span> <span class="s">trace</span>
+        <span class="pi">-</span> <span class="s">root cause</span>
+      <span class="na">architect</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">design</span>
+        <span class="pi">-</span> <span class="s">architect</span>
+        <span class="pi">-</span> <span class="s">structure</span>
+        <span class="pi">-</span> <span class="s">plan</span>
+      <span class="na">ask</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">explain</span>
+        <span class="pi">-</span> <span class="s">help</span>
+        <span class="pi">-</span> <span class="s">what</span>
+        <span class="pi">-</span> <span class="s">how</span>
+        <span class="pi">-</span> <span class="s">why</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Operational Triggers</strong>:
+    <ul>
+      <li><strong>File-based</strong>: Switches based on file operations</li>
+      <li><strong>Mode-specific</strong>: Contextual switches based on task type</li>
+      <li><strong>Capability-based</strong>: Switches to mode with required capabilities</li>
+    </ul>
+  </li>
+  <li><strong>Context Preservation</strong>:
+    <ul>
+      <li>Maintains task state across switches</li>
+      <li>Preserves conversation history</li>
+      <li>Tracks active files and operations</li>
+    </ul>
+  </li>
+  <li><strong>Benefits</strong>:
+    <ul>
+      <li>Natural language-driven mode selection</li>
+      <li>Seamless context transitions</li>
+      <li>Improved workflow efficiency</li>
+      <li>Task-appropriate mode selection</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="️-configuration-system">⚙️ Configuration System</h2>
+
+<h3 id="clinerules-files">.clinerules Files</h3>
+
+<ol>
+  <li><strong>.clinerules-architect</strong>
+    <ul>
+      <li>Mode switching for non-markdown files</li>
+      <li>Memory Bank initialization rules</li>
+      <li>Architecture documentation standards</li>
+    </ul>
+  </li>
+  <li><strong>.clinerules-code</strong>
+    <ul>
+      <li>Full file access configuration</li>
+      <li>Code generation settings</li>
+      <li>Tool access permissions</li>
+    </ul>
+  </li>
+  <li><strong>.clinerules-ask</strong>
+    <ul>
+      <li>Read-only access settings</li>
+      <li>Mode switching for edits</li>
+      <li>Documentation preferences</li>
+    </ul>
+  </li>
+  <li><strong>.clinerules-debug</strong>
+    <ul>
+      <li>Read-only access settings</li>
+      <li>Diagnostic tool permissions</li>
+      <li>Logging and tracing configurations</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="file-organization">File Organization</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>project-root/
+├── .clinerules-architect
+├── .clinerules-code
+├── .clinerules-ask
+├── .clinerules-debug
+├── memory-bank/
+│   ├── activeContext.md
+│   ├── productContext.md
+│   ├── progress.md
+│   └── decisionLog.md
+└── projectBrief.md
+</code></pre></div></div>
+
+<h2 id="️-development-workflow">🛠️ Development Workflow</h2>
+
+<h3 id="real-time-update-system">Real-time Update System</h3>
+
+<ol>
+  <li><strong>Event Monitoring</strong>
+    <ul>
+      <li>Continuous tracking of project-related events</li>
+      <li>Mode-specific update triggers</li>
+      <li>Automatic event classification</li>
+    </ul>
+  </li>
+  <li><strong>Update Processing</strong>
+    <ul>
+      <li>Immediate file updates based on event type</li>
+      <li>Asynchronous processing for performance</li>
+      <li>Priority-based update queue</li>
+    </ul>
+  </li>
+  <li><strong>Sync Management</strong>
+    <ul>
+      <li>Cross-reference preservation</li>
+      <li>Context consistency checks</li>
+      <li>Conflict resolution</li>
+    </ul>
+  </li>
+  <li><strong>Manual Fallback (UMB)</strong>
+    <ul>
+      <li>Emergency session termination</li>
+      <li>Mid-task interruptions</li>
+      <li>Connection recovery</li>
+      <li>Force synchronization</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="memory-bank-initialization">Memory Bank Initialization</h3>
+
+<ol>
+  <li>Start in Architect mode</li>
+  <li>System checks for <code class="language-plaintext highlighter-rouge">memory-bank/</code></li>
+  <li>If missing:
+    <ul>
+      <li>Creates directory</li>
+      <li>Generates core files</li>
+      <li>Sets up initial context</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="session-workflow">Session Workflow</h3>
+
+<ol>
+  <li><strong>Session Start</strong>
+    <ul>
+      <li>System reads all Memory Bank files</li>
+      <li>Builds comprehensive context</li>
+      <li>Loads mode-specific rules</li>
+    </ul>
+  </li>
+  <li><strong>During Session</strong>
+    <ul>
+      <li>Automatic mode switching as needed</li>
+      <li>Context updates in activeContext.md</li>
+      <li>Progress tracking in progress.md</li>
+    </ul>
+  </li>
+  <li><strong>Session End</strong>
+    <ul>
+      <li>Update progress.md</li>
+      <li>Record decisions in decisionLog.md</li>
+      <li>Plan next steps</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-best-practices">🔍 Best Practices</h2>
+
+<ol>
+  <li><strong>Memory Bank Management</strong>
+    <ul>
+      <li>Keep files focused and organized</li>
+      <li>Update regularly during sessions</li>
+      <li>Cross-reference between files</li>
+    </ul>
+  </li>
+  <li><strong>Mode Usage</strong>
+    <ul>
+      <li>Start architecture work in Architect mode</li>
+      <li>Let automatic switching handle transitions</li>
+      <li>Use Ask mode for documentation</li>
+    </ul>
+  </li>
+  <li><strong>Documentation</strong>
+    <ul>
+      <li>Keep decisions documented</li>
+      <li>Update progress regularly</li>
+      <li>Maintain clear context</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-troubleshooting">🐛 Troubleshooting</h2>
+
+<ol>
+  <li><strong>Mode Switching Issues</strong>
+    <ul>
+      <li>Verify .clinerules files</li>
+      <li>Check file permissions</li>
+      <li>Review mode switching logs</li>
+    </ul>
+  </li>
+  <li><strong>Memory Bank Problems</strong>
+    <ul>
+      <li>Ensure core files exist</li>
+      <li>Verify file structure</li>
+      <li>Check file permissions</li>
+    </ul>
+  </li>
+  <li><strong>Context Issues</strong>
+    <ul>
+      <li>Update activeContext.md</li>
+      <li>Review recent changes</li>
+      <li>Check file synchronization</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example Memory Bank Updates:</p>
+
+<ul>
+  <li>productContext.md:
+ ```markdown
+ # memory-bank/productContext.md</li>
+</ul>
+
+<p>Project Overview
+ This project is a [briefly describe your application - e.g., “task management web application”].
+ We are adding user authentication to enhance security and personalize user experience.</p>
+
+<p>Key Technologies</p>
+<ul>
+  <li>[List existing technologies]</li>
+  <li>OAuth 2.0 (for social login - <em>Decision needed: which provider?</em>)</li>
+  <li>JWT (JSON Web Tokens) for session management</li>
+  <li>
+    <p>bcrypt (for password hashing)
+ ```</p>
+  </li>
+  <li>activeContext.md (Example - Initial state):
+ ```markdown
+ # memory-bank/activeContext.md</li>
+</ul>
+
+<p>Current Task
+ Developing user authentication feature.</p>
+
+<p>Next Steps</p>
+<ul>
+  <li>
+    <ol>
+      <li>Plan database schema for user credentials.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Implement user registration API endpoint.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Implement user login API endpoint.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Implement JWT-based authentication middleware.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Open Questions</p>
+<ul>
+  <li>Which OAuth 2.0 provider to use (Google, GitHub, etc.)?</li>
+  <li>Password complexity requirements?</li>
+  <li>
+    <p>Session management strategy (e.g., refresh tokens)?
+ ```</p>
+  </li>
+  <li>progress.md (Example - Tracking progress):
+ ```markdown
+ # memory-bank/progress.md</li>
+</ul>
+
+<p>Work Done</p>
+<ul>
+  <li>[Initially empty]</li>
+  <li></li>
+  <li></li>
+  <li>[Continue updating as tasks are completed]</li>
+</ul>
+
+<p>To Do</p>
+<ul>
+  <li>[Initially, list all planned tasks]</li>
+  <li>Plan database schema for user credentials.</li>
+  <li>Implement user registration API endpoint.</li>
+  <li>Implement user login API endpoint.</li>
+  <li>Implement JWT-based authentication middleware.</li>
+  <li>Implement frontend integration for login/registration.</li>
+  <li>Implement session management.</li>
+  <li>Implement password reset functionality.</li>
+  <li>Write unit and integration tests for authentication.</li>
+  <li>[Update as tasks are completed and new tasks emerge]</li>
+</ul>
+
+<p>Current Status
+ User authentication feature - In development - Database schema design in progress.</p>
+<ul>
+  <li>[Update status as development progresses] - User authentication feature - In development - User registration API implemented, working on login API.</li>
+  <li>[Upon completion] - User authentication feature - Completed and integrated.
+ ```</li>
+</ul>
+
+<p>Benefits:</p>
+
+<ul>
+  <li>Comprehensive feature planning &amp; documentation</li>
+  <li>Systematic task &amp; progress tracking</li>
+  <li>Context maintenance across sessions</li>
+  <li>Effective status communication</li>
+</ul>
+
+<p>Memory Bank for Refactoring: Complex Code Module</p>
+
+<p>Memory Bank Initialization: Quick Workflow</p>
+
+<p>The Memory Bank initialization is largely automatic. Here’s a simplified view of the process:</p>
+
+<ol>
+  <li><strong>Start in Architect or Code Mode:</strong> When you open a new project in VS Code and switch to Architect or Code mode, Roo Code automatically checks for a <code class="language-plaintext highlighter-rouge">memory-bank/</code>.</li>
+  <li><strong>Initialization Plan:</strong> If <code class="language-plaintext highlighter-rouge">memory-bank/</code> is missing, Roo Code (in Architect mode) will guide you with a plan to set it up.</li>
+  <li><strong>Switch to Code Mode:</strong> Follow Roo’s prompt to switch to Code mode.</li>
+  <li><strong>Create Memory Bank Files:</strong> In Code mode, follow Roo’s plan to create the <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory and the necessary files.</li>
+  <li><strong>Memory Bank Ready:</strong> Once files are created, your Memory Bank is initialized and ready for use.</li>
+</ol>
+
+<p>Handling Multiple Projects in a Workspace</p>
+
+<p>If you have multiple projects with their own Memory Banks within your VS Code workspace, Roo Code can automatically detect them and prompt you to select the target project for the current chat session.</p>
+
+<p>Handling Multiple Projects in a Workspace</p>
+
+<p>If you have multiple projects with their own Memory Banks within your VS Code workspace, Roo Code can automatically detect them and prompt you to select the target project for the current chat session.</p>
+
+<p>Automatic Project Detection and Selection:</p>
+
+<ol>
+  <li>New Chat Session: When you start a new chat session in Architect or Code mode, Roo Code scans your workspace for <code class="language-plaintext highlighter-rouge">memory-bank/</code> directories.</li>
+  <li>Multiple Memory Banks Found: If multiple <code class="language-plaintext highlighter-rouge">memory-bank/</code> directories are detected, Roo Code will display a prompt in the chat asking you to choose the project you want to work on.</li>
+  <li>Project Selection Prompt: Roo Code will display a prompt asking you to choose your project.  It will look something like this in the chat:</li>
+</ol>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Multiple Memory Banks detected.
+
+Please select the project for this session:
+
+1. poptools-app
+2. Roo-Code
+3. roo-code-memory-bank
+
+Enter the number of your project choice.
+</code></pre></div></div>
+<ol>
+  <li>Select Your Project: Enter the number corresponding to the project you want to work with and press Enter.</li>
+  <li>Context Loaded: Roo Code will then load the Memory Bank for the selected project and use it for the current chat session.</li>
+</ol>
+
+<p>Example Scenario: Multi-Project Workspace</p>
+
+<p>Let’s say you have a workspace with multiple projects, like <code class="language-plaintext highlighter-rouge">webapp</code> and <code class="language-plaintext highlighter-rouge">mobile-app</code>, each with its own <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory.</p>
+
+<p>When you initiate a new chat in Architect mode, Roo Code will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Multiple Memory Banks detected.
+
+Please select the project for this session:
+
+1. webapp
+2. mobile-app
+
+Enter the number of your project choice.
+</code></pre></div></div>
+<p>By choosing ‘1’, Roo Code will then use the Memory Bank from your <code class="language-plaintext highlighter-rouge">webapp</code> project for this session.</p>
+
+<p>By selecting ‘1’, you ensure that Roo Code uses the Memory Bank from your <code class="language-plaintext highlighter-rouge">webapp</code> project for this session.</p>
+
+<p>Organizing Multi-Project Workspaces:</p>
+
+<p>To effectively manage multiple projects with Memory Banks:</p>
+
+<ul>
+  <li>Keep Memory Banks at Project Roots: Ensure each project has its <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory at the root level of its project directory.</li>
+  <li>Clear Project Names: Use descriptive names for your project directories to easily identify them in the project selection prompt.</li>
+  <li>Workspace Structure: Organize your workspace so that project directories are clearly separated.</li>
+</ul>
+
+<p>This automatic project detection and selection feature simplifies working with multiple projects and ensures Roo Code always has the correct project context for each session.</p>
+
+<p>Automatic Project Detection and Selection:</p>
+
+<ol>
+  <li>New Chat Session: When you start a new chat session in Architect or Code mode, Roo Code scans your workspace for <code class="language-plaintext highlighter-rouge">memory-bank/</code> directories.</li>
+  <li>Multiple Memory Banks Found: If multiple <code class="language-plaintext highlighter-rouge">memory-bank/</code> directories are detected, Roo Code will display a prompt in the chat asking you to choose the project you want to work on.</li>
+  <li>Project Selection Prompt: Roo Code will display a prompt asking you to choose your project.  It will look something like this in the chat:</li>
+</ol>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Multiple Memory Banks detected.
+
+Please select the project for this session:
+
+1. poptools-app
+2. Roo-Code
+3. roo-code-memory-bank
+
+Enter the number of your project choice.
+</code></pre></div></div>
+<ol>
+  <li>Select Your Project: Enter the number corresponding to the project you want to work with and press Enter.</li>
+  <li>Context Loaded: Roo Code will then load the Memory Bank for the selected project and use it for the current chat session.</li>
+</ol>
+
+<p>Example Scenario: Multi-Project Workspace</p>
+
+<p>Let’s say you have a workspace with multiple projects, like <code class="language-plaintext highlighter-rouge">webapp</code> and <code class="language-plaintext highlighter-rouge">mobile-app</code>, each with its own <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory.</p>
+
+<p>When you initiate a new chat in Architect mode, Roo Code will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Multiple Memory Banks detected.
+
+Please select the project for this session:
+
+1. webapp
+2. mobile-app
+
+Enter the number of your project choice.
+</code></pre></div></div>
+<p>By choosing ‘1’, Roo Code will then use the Memory Bank from your <code class="language-plaintext highlighter-rouge">webapp</code> project for this session.</p>
+
+<p>By selecting ‘1’, you ensure that Roo Code uses the Memory Bank from your <code class="language-plaintext highlighter-rouge">webapp</code> project for this session.</p>
+
+<p>Organizing Multi-Project Workspaces:</p>
+
+<p>To effectively manage multiple projects with Memory Banks:</p>
+
+<ul>
+  <li>Keep Memory Banks at Project Roots: Ensure each project has its <code class="language-plaintext highlighter-rouge">memory-bank/</code> directory at the root level of its project directory.</li>
+  <li>Clear Project Names: Use descriptive names for your project directories to easily identify them in the project selection prompt.</li>
+  <li>Workspace Structure: Organize your workspace so that project directories are clearly separated.</li>
+</ul>
+
+<p>This automatic project detection and selection feature simplifies working with multiple projects and ensures Roo Code always has the correct project context for each session.</p>
+
+<p>Example Memory Bank Updates:</p>
+
+<ul>
+  <li>activeContext.md (Refactoring plan &amp; progress):
+ ```markdown
+ # memory-bank/activeContext.md</li>
+</ul>
+
+<p>Current Task
+ Refactoring complex <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code> module.</p>
+
+<p>Refactoring Strategy</p>
+<ul>
+  <li>
+    <ol>
+      <li>Analyze <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code></li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Decompose into smaller modules/functions</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Improve naming and documentation</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Write unit tests</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Gradually refactor and test</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Files to Refactor</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code></li>
+</ul>
+
+<p>Refactoring Progress</p>
+<ul>
+  <li>[Initially empty]</li>
+  <li></li>
+  <li></li>
+  <li>[Continue updating as refactoring progresses]</li>
+</ul>
+
+<p>Open Questions</p>
+<ul>
+  <li>Dependencies on <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code>?</li>
+  <li>
+    <p>Estimated refactoring time?
+ ```</p>
+  </li>
+  <li>decisionLog.md (Example decisions):
+ ```markdown
+ # memory-bank/decisionLog.md</li>
+</ul>
+
+<p>Refactoring <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code> - Decisions</p>
+
+<ul>
+  <li></li>
+  <li>Rationale: Improves modularity and maintainability.</li>
+  <li>
+    <p>Alternatives: In-place refactoring (Rejected - less impactful).</p>
+  </li>
+  <li></li>
+  <li>Rationale: Improves code readability.</li>
+  <li>
+    <p>Alternatives: Minimal documentation (Rejected - insufficient).
+ ```</p>
+  </li>
+  <li>progress.md (Tracking refactoring progress):
+ ```markdown
+ # memory-bank/progress.md</li>
+</ul>
+
+<p>Work Done</p>
+<ul>
+  <li>[Initially empty]</li>
+  <li></li>
+  <li></li>
+  <li>[Continue updating as refactoring progresses]</li>
+</ul>
+
+<p>To Do</p>
+<ul>
+  <li>[Initially, list all refactoring tasks]</li>
+  <li>Analyze <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code>.</li>
+  <li>Decompose into smaller modules/functions.</li>
+  <li>Improve naming and documentation.</li>
+  <li>Write unit tests for refactored modules.</li>
+  <li>Gradually refactor and test each module.</li>
+  <li>Integrate refactored modules.</li>
+  <li>Verify functionality after refactoring.</li>
+  <li>[Update as tasks are completed]</li>
+</ul>
+
+<p>Current Status
+ Refactoring <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code> - Planning complete.</p>
+<ul>
+  <li>[Update status as refactoring progresses] - Refactoring <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code> - In progress - Core functions decomposition completed.</li>
+  <li>[Upon completion] - Refactoring <code class="language-plaintext highlighter-rouge">utils/legacy_module.py</code> - Completed and verified.
+ ```</li>
+</ul>
+
+<p>Benefits:</p>
+
+<ul>
+  <li>Systematic refactoring planning &amp; management</li>
+  <li>Documented strategy, decisions, &amp; progress</li>
+  <li>Context &amp; open question tracking</li>
+  <li>Improved team collaboration</li>
+</ul>
+
+<p>Memory Bank for Bug Fixing: User Login Bug</p>
+
+<p>Example Memory Bank Updates:</p>
+
+<ul>
+  <li>activeContext.md (Bug investigation &amp; details):
+ ```markdown
+ # memory-bank/activeContext.md</li>
+</ul>
+
+<p>Current Task
+ Debugging user login bug.</p>
+
+<p>Bug Details</p>
+<ul>
+  <li>Symptom: Login redirects back with “Invalid credentials” error.</li>
+  <li>Reported by: Users (support tickets #123, #124, #125).</li>
+  <li>Affected users: All users.</li>
+  <li>Environment: All browsers/platforms.</li>
+  <li>Last working version: v1.2.0 (suspect v1.2.1 regression).</li>
+</ul>
+
+<p>Reproduction Steps</p>
+<ol>
+  <li>Go to login page.</li>
+  <li>Enter valid username and password.</li>
+  <li>Submit login form.</li>
+  <li>Observe “Invalid credentials” error.</li>
+</ol>
+
+<p>Investigation Progress</p>
+<ul>
+  <li>[Initially empty]</li>
+  <li></li>
+  <li>
+    <p>```</p>
+  </li>
+  <li>decisionLog.md (Debugging decisions &amp; findings):
+ ```markdown
+ # memory-bank/decisionLog.md</li>
+</ul>
+
+<p>Bug Fix - User Login Bug - Decisions</p>
+
+<ul>
+  <li></li>
+  <li>
+    <p>Findings: Password hashing logic correct, password comparison fails.</p>
+  </li>
+  <li></li>
+  <li>Rationale: Suspect bcrypt incompatibility.</li>
+  <li>
+    <p>Action: Revert bcrypt version (quick verification).</p>
+  </li>
+  <li></li>
+  <li>Findings: Reverting bcrypt fixed bug. Confirms bcrypt issue.</li>
+  <li>
+    <p>Next Steps: Document bcrypt issue, long-term fix.
+ ```</p>
+  </li>
+  <li>progress.md (Bug fix progress):
+ ```markdown
+ # memory-bank/progress.md</li>
+</ul>
+
+<p>Work Done</p>
+<ul>
+  <li>[Initially empty]</li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p>To Do</p>
+<ul>
+  <li>[Initially, bug fix tasks]</li>
+  <li>Investigate user login bug.</li>
+  <li>Identify root cause.</li>
+  <li>Implement temp fix (bcrypt revert).</li>
+  <li>Verify temp fix.</li>
+  <li>Investigate long-term bcrypt solution.</li>
+  <li>Implement long-term fix.</li>
+  <li>Regression tests.</li>
+  <li>Deploy fix.</li>
+  <li>Monitor login.</li>
+  <li>[Update tasks as needed]</li>
+</ul>
+
+<p>Current Status
+ User login bug - Investigating - Root cause identified (bcrypt incompatibility). Temporary fix implemented/verified.</p>
+<ul>
+  <li>[Update status as bug fix progresses] - User login bug - Fix implemented and verified. - Temporary fix deployed. Monitoring.</li>
+  <li>[Upon completion] - User login bug - Fixed (long-term solution implemented). - Long-term fix deployed. Regression tests added.
+ ```</li>
+</ul>
+
+<p>Benefits:</p>
+
+<ul>
+  <li>Systematic debugging</li>
+  <li>Documented bug details &amp; decisions</li>
+  <li>Bug fix progress tracking</li>
+  <li>Context maintenance during debugging</li>
+  <li>Facilitated knowledge sharing</li>
+</ul>
+
+<p>Troubleshooting</p>
+
+<p><code class="language-plaintext highlighter-rouge">[MEMORY BANK: ACTIVE]</code> Prefix Not Working</p>
+
+<p>Solution: Check Custom Instructions</p>
+<ol>
+  <li>Verify custom instruction settings in VS Code: Ensure all custom instruction modules are correctly configured in “Roo Code Prompts” settings, especially “Mode-specific Custom Instructions/Code”.
+    <ul class="task-list">
+      <li>Detailed Verification Checklist:</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Global Instructions:</strong> Verify that you have copied the <em>entire content</em> of the file <code class="language-plaintext highlighter-rouge">roo-code-memory-bank/custom-instructions/global-instructions.md</code> and pasted it into the “Global Instructions” setting within the “Roo Code Prompts” section in VS Code settings.</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mode-specific Instructions/Architect:</strong> Verify that you have copied the <em>entire content</em> of <code class="language-plaintext highlighter-rouge">roo-code-memory-bank/custom-instructions/mode-arch.md</code> and pasted it into the “Mode-specific Instructions/Architect” setting.</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mode-specific Instructions/Ask:</strong> Verify that you have copied the <em>entire content</em> of <code class="language-plaintext highlighter-rouge">roo-code-memory-bank/custom-instructions/mode-ask.md</code> and pasted it into the “Mode-specific Instructions/Ask” setting.</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mode-specific Instructions/Code:</strong> <strong>Crucially</strong>, verify that you have copied the <em>entire content</em> of <code class="language-plaintext highlighter-rouge">roo-code-memory-bank/custom-instructions/mode-code.md</code> and pasted it into the “Mode-specific Custom Instructions/Code” setting. <strong>This specific setting is essential for the <code class="language-plaintext highlighter-rouge">[MEMORY BANK: ACTIVE]</code> prefix to function correctly in Code mode.</strong></li>
+      <li class="task-list-item">Content Integrity: Double-check that you have copied the <em>complete content</em> of <em>each</em> specified file and pasted it into the <em>corresponding</em> settings area, ensuring no content was missed or corrupted during the copy-paste process.</li>
+    </ul>
+  </li>
+  <li>Save Settings: Verify that VS Code settings were saved after pasting instructions.</li>
+  <li>Confirm Code Mode: Ensure you are in “Code” mode when using <code class="language-plaintext highlighter-rouge">[MEMORY BANK: ACTIVE]</code> prefix (check Roo Code chat interface).</li>
+  <li>Check Prefix Syntax: Verify exact syntax: <code class="language-plaintext highlighter-rouge">[MEMORY BANK: ACTIVE]</code> (case-sensitive, spacing).</li>
+</ol>
+
+<p>Memory Bank Not Persisting After VS Code Restart</p>
+
+<p>Solution:</p>
+<ol>
+  <li>Verify Memory Bank Initialization: Confirm that you have initiated the Memory Bank initialization process by switching to Architect mode in a new project (see “Getting Started” section). Check if the <code class="language-plaintext highlighter-rouge">memory-bank/</code> folder and essential files were created at the project root after following the initialization plan provided by Roo Code in Architect mode.</li>
+  <li>Initial Mode Switch: After VS Code restart, switch to “Ask” or “Architect” mode <em>first</em> to trigger Memory Bank loading.</li>
+  <li>Use “Update Memory Bank” (UMB) Command: Use “update memory bank” or <strong>“UMB” as a standalone prompt</strong> at session end to explicitly trigger the comprehensive Memory Bank update and prepare for the next session.</li>
+  <li>Check File Paths: Verify <code class="language-plaintext highlighter-rouge">memory-bank/</code> folder is at project root; incorrect paths prevent Memory Bank access.</li>
+</ol>
+
+<p>.clinerules Rules Not Applied</p>
+
+<p>Solution:</p>
+<ol>
+  <li>File Location: Ensure <code class="language-plaintext highlighter-rouge">.clinerules</code> files (<code class="language-plaintext highlighter-rouge">.clinerules</code>, <code class="language-plaintext highlighter-rouge">.clinerules-code</code>, etc.) are at project root, alongside <code class="language-plaintext highlighter-rouge">memory-bank/</code> folder.</li>
+  <li>Syntax Check: Verify <code class="language-plaintext highlighter-rouge">.clinerules</code> file syntax; incorrect syntax may cause rules to be ignored.</li>
+  <li>Mode Relevance: Note that <code class="language-plaintext highlighter-rouge">.clinerules-code</code>, <code class="language-plaintext highlighter-rouge">.clinerules-architect</code>, <code class="language-plaintext highlighter-rouge">.clinerules-ask</code> are mode-specific.</li>
+  <li>Restart Roo Code (Rare):  Restart Roo Code in VS Code after major <code class="language-plaintext highlighter-rouge">.clinerules</code> changes to reload rules.</li>
+</ol>
+
+<p>Memory Bank Files Not Updating/Saving</p>
+
+<p>Solution:</p>
+<ol>
+  <li>File Permissions: Check write permissions for <code class="language-plaintext highlighter-rouge">memory-bank/</code> folder and files.</li>
+  <li>VS Code Errors: Check VS Code console for file saving errors.</li>
+  <li>Conflicting Extensions: Temporarily disable extensions that might interfere with saving.</li>
+  <li>Disk Space: Ensure sufficient free disk space is available.</li>
+</ol>
+
+<p>If issues persist, consult the Roo Code documentation or community support channels for further assistance.</p>
+
+<p>Revised Guidance on “Update Memory Bank” (UMB) Command:</p>
+
+<p>Although not strictly <em>required</em> after every break, using the <strong>“Update Memory Bank” (UMB) command</strong> (typing “update memory bank” or “UMB” as a standalone prompt in chat) is <strong>highly recommended and should be considered a best practice</strong> for robust session management and ensuring long-term project context preservation.  <strong>Triggering UMB as a standalone prompt ensures a comprehensive update of all Memory Bank files, guaranteeing accurate and persistent project knowledge.</strong></p>
+
+<p>To visualize this session management process, refer to the workflow diagram below:</p>
+
+<p>Session Management Workflow (<code class="language-plaintext highlighter-rouge">update memory bank</code> Command)</p>
+
+<ol>
+  <li>Start: Working on Project (Any Mode)</li>
+  <li>Step 1: User makes changes to Memory Bank files (<code class="language-plaintext highlighter-rouge">productContext.md</code>, <code class="language-plaintext highlighter-rouge">activeContext.md</code>, <code class="language-plaintext highlighter-rouge">progress.md</code>, etc.)</li>
+  <li>Step 2: Session End or Break?
+ Yes: User initiates <code class="language-plaintext highlighter-rouge">update memory bank</code> command in chat
+ No: Continue Working (Loop back to Step 1)</li>
+  <li>Step 3: Roo Code saves current state of Memory Bank files</li>
+  <li>Step 4: Memory Bank is prepared for next session</li>
+  <li>End: Session Managed &amp; Memory Bank Updated</li>
+</ol>
+
+<p>Think of it as:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">[MEMORY BANK: ACTIVE]</code> Prefix:  Ensures Roo uses <em>documented, reliable</em> project context in Code mode (important for memory resets).</li>
+  <li><code class="language-plaintext highlighter-rouge">update memory bank</code> Command: “Save project knowledge” command. Use it to:
+    <ul>
+      <li>Update Memory Bank at session end/breaks.</li>
+      <li>Prepare for VS Code closure/workspace switch.</li>
+      <li>Create project history checkpoints.</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Roo Code Memory Bank</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
