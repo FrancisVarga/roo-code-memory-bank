@@ -4,14 +4,14 @@
 
 <br>
 
-## New install scripts for [Windows](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.cmd) and [Linux/macOS](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.sh) !!
+## New install scripts for [Windows](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.cmd) and [Linux/macOS](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.sh) !!
 
 # 🧠 Roo Code Memory Bank
 
 **Persistent Project Context for AI-Assisted Development**
 
 [![VS Code Extension](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://github.com/RooVetGit/Roo-Code)
-[![GitHub](https://img.shields.io/badge/View%20on-GitHub-lightgrey.svg)](https://github.com/GreatScottyMac/roo-code-memory-bank)
+[![GitHub](https://img.shields.io/badge/View%20on-GitHub-lightgrey.svg)](https://github.com/FrancisVarga/roo-code-memory-bank)
 
 </div>
 
@@ -57,11 +57,11 @@ The easiest way to set up the necessary configuration files is using the provide
 2.  **Download the appropriate script** for your operating system:
     *   **Windows (Command Prompt or PowerShell):**
         ```bash
-        curl -L -o install.cmd https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.cmd
+        curl -L -o install.cmd https://raw.githubusercontent.com/FrancisVarga/roo-code-memory-bank/main/config/install.cmd
         ```
     *   **Linux / macOS (bash/zsh):**
         ```bash
-        curl -L -o install.sh https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.sh
+        curl -L -o install.sh https://raw.githubusercontent.com/FrancisVarga/roo-code-memory-bank/main/config/install.sh
         ```
 3.  **Run the downloaded script:**
     *   **Windows:**
@@ -395,14 +395,14 @@ Switch to Test mode when you need to:
 
 ## 📖 Documentation
 
-- [Developer Deep Dive](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/developer-primer.md)
-- [Update Log](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/updates.md)
+- [Developer Deep Dive](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/developer-primer.md)
+- [Update Log](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/updates.md)
 
 ---
 
 <div align="center">
 
-**[View on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank) • [Report Issues](https://github.com/GreatScottyMac/roo-code-memory-bank/issues) • [Get Roo Code](https://github.com/RooVetGit/Roo-Code)**
+**[View on GitHub](https://github.com/FrancisVarga/roo-code-memory-bank) • [Report Issues](https://github.com/FrancisVarga/roo-code-memory-bank/issues) • [Get Roo Code](https://github.com/RooVetGit/Roo-Code)**
 
 </div>
 
