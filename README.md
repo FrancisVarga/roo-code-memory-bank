@@ -4,7 +4,7 @@
 
 <br>
 
-## New install scripts for [Windows](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.cmd) and [Linux/macOS](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.sh) !!
+## New install scripts for [Windows](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.cmd), [Linux/macOS](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.sh), and [Python](https://github.com/FrancisVarga/roo-code-memory-bank/blob/main/config/install.py) !!
 
 # 🧠 Roo Code Memory Bank
 
@@ -63,6 +63,10 @@ The easiest way to set up the necessary configuration files is using the provide
         ```bash
         curl -L -o install.sh https://raw.githubusercontent.com/FrancisVarga/roo-code-memory-bank/main/config/install.sh
         ```
+    *   **Python (Cross-platform):**
+        ```bash
+        curl -L -o install.py https://raw.githubusercontent.com/FrancisVarga/roo-code-memory-bank/main/config/install.py
+        ```
 3.  **Run the downloaded script:**
     *   **Windows:**
         ```cmd
@@ -72,6 +76,10 @@ The easiest way to set up the necessary configuration files is using the provide
         ```bash
         chmod +x install.sh
         bash install.sh
+        ```
+    *   **Python:**
+        ```bash
+        python install.py
         ```
     The script will download the necessary `.clinerules-*` and `.roomodes` files into your project root and then attempt to delete itself.
 

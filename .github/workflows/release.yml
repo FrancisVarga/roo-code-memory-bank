@@ -68,3 +68,41 @@ jobs:
             release/roo-code-memory-bank.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-latest-release:
+    needs: [release-please, build-package]
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+
+      - name: Download release assets
+        run: |
+          mkdir -p assets
+          # Download the release assets from the newly created release
+          gh release download ${{ needs.release-please.outputs.tag_name }} --dir assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create or update "latest" release
+        run: |
+          # Check if "latest" release exists and delete it if it does
+          gh release delete latest --yes || true
+
+          # Create new "latest" release pointing to the current tag
+          gh release create latest \
+            --title "Latest Release" \
+            --notes "This is always the latest release of roo-code-memory-bank. Currently points to ${{ needs.release-please.outputs.tag_name }}." \
+            --target ${{ github.sha }}
+
+          # Upload the same assets to the "latest" release
+          for file in assets/*; do
+            gh release upload latest "$file"
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
